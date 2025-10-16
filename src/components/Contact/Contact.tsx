@@ -7,7 +7,6 @@ import { Container, Section, Button, Card } from '../UI';
 import { useData } from '../../hooks/useData';
 import { trackContactInteraction } from '../../services/analytics';
 import { EmailService } from '../../services/emailService';
-import { getEmailServiceStatus } from '../../config/emailConfig';
 import type { ComponentProps, ContactFormData } from '../../types';
 
 interface FormErrors {
