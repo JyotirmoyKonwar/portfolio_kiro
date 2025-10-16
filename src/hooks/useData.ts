@@ -5,7 +5,8 @@ import type {
   Project, 
   SkillCategory, 
   ResearchEntry,
-  AboutData
+  AboutData,
+  Experience
 } from '../types';
 
 /**
@@ -213,6 +214,61 @@ export const useResearchData = () => {
 };
 
 /**
+ * Custom hook for loading and managing experience data
+ */
+export const useExperienceData = () => {
+  const [data, setData] = useState<Experience[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    try {
+      const experience = DataLoader.getExperience();
+      setData(experience);
+      setError(null);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to load experience data');
+      setData([]);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  // Memoized computed values
+  const experienceByType = useMemo(() => 
+    data.reduce((acc, exp) => {
+      if (!acc[exp.type]) {
+        acc[exp.type] = [];
+      }
+      acc[exp.type].push(exp);
+      return acc;
+    }, {} as Record<string, Experience[]>), [data]
+  );
+
+  const allTechnologies = useMemo(() => 
+    [...new Set(data.flatMap(exp => exp.technologies))].sort(), [data]
+  );
+
+  const recentExperience = useMemo(() => 
+    [...data].sort((a, b) => {
+      // Sort by end date, with "Present" being most recent
+      if (a.endDate === 'Present') return -1;
+      if (b.endDate === 'Present') return 1;
+      return new Date(b.endDate).getTime() - new Date(a.endDate).getTime();
+    }).slice(0, 3), [data]
+  );
+
+  return { 
+    data, 
+    loading, 
+    error, 
+    experienceByType, 
+    allTechnologies,
+    recentExperience
+  };
+};
+
+/**
  * Custom hook for searching and filtering data
  */
 export const useDataSearch = () => {
@@ -315,9 +371,10 @@ export const useData = () => {
   const { data: projectsData, loading: projectsLoading, error: projectsError } = useProjectsData();
   const { data: skillsData, loading: skillsLoading, error: skillsError } = useSkillsData();
   const { data: researchData, loading: researchLoading, error: researchError } = useResearchData();
+  const { data: experienceData, loading: experienceLoading, error: experienceError } = useExperienceData();
 
-  const loading = portfolioLoading || aboutLoading || projectsLoading || skillsLoading || researchLoading;
-  const error = portfolioError || aboutError || projectsError || skillsError || researchError;
+  const loading = portfolioLoading || aboutLoading || projectsLoading || skillsLoading || researchLoading || experienceLoading;
+  const error = portfolioError || aboutError || projectsError || skillsError || researchError || experienceError;
 
   return {
     portfolioData,
@@ -325,6 +382,7 @@ export const useData = () => {
     projectsData,
     skillsData,
     researchData,
+    experienceData,
     loading,
     error
   };

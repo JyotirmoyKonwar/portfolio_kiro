@@ -9,16 +9,25 @@ import { SectionErrorBoundary } from './UI/ErrorBoundary';
 
 // Create lazy components using React.lazy
 const LazyProjectsComponent = lazy(() => import('./Projects/Projects').then(module => ({ default: module.Projects })));
+const LazyExperienceComponent = lazy(() => import('./Experience/Experience').then(module => ({ default: module.Experience })));
 const LazyResearchComponent = lazy(() => import('./Research/Research').then(module => ({ default: module.Research })));
 const LazySkillsComponent = lazy(() => import('./Skills/Skills').then(module => ({ default: module.Skills })));
 const LazyContactComponent = lazy(() => import('./Contact/Contact').then(module => ({ default: module.Contact })));
-const LazyAnalyticsDashboardComponent = lazy(() => import('./Analytics/AnalyticsDashboard').then(module => ({ default: module.AnalyticsDashboard })));
+
 
 // Wrapped components with error boundaries and loading states
 export const LazyProjects: React.FC = () => (
   <SectionErrorBoundary sectionName="Projects">
     <Suspense fallback={<ProjectsLoadingFallback />}>
       <LazyProjectsComponent />
+    </Suspense>
+  </SectionErrorBoundary>
+);
+
+export const LazyExperience: React.FC = () => (
+  <SectionErrorBoundary sectionName="Experience">
+    <Suspense fallback={<SectionLoadingFallback title="Experience" />}>
+      <LazyExperienceComponent />
     </Suspense>
   </SectionErrorBoundary>
 );
@@ -47,18 +56,7 @@ export const LazyContact: React.FC = () => (
   </SectionErrorBoundary>
 );
 
-export const LazyAnalyticsDashboard: React.FC<{ isOpen: boolean; onClose: () => void }> = (props) => (
-  <Suspense fallback={
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-slate-800 rounded-lg p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-500 mx-auto"></div>
-        <p className="text-slate-300 mt-4">Loading Analytics...</p>
-      </div>
-    </div>
-  }>
-    <LazyAnalyticsDashboardComponent {...props} />
-  </Suspense>
-);
+
 
 // Preload critical components
 export const preloadCriticalComponents = () => {
@@ -73,12 +71,14 @@ export const preloadCriticalComponents = () => {
   // Preload other components on idle
   if ('requestIdleCallback' in window) {
     requestIdleCallback(() => {
+      import('./Experience/Experience');
       import('./Research/Research');
       import('./Skills/Skills');
       import('./Contact/Contact');
     });
   } else {
     setTimeout(() => {
+      import('./Experience/Experience');
       import('./Research/Research');
       import('./Skills/Skills');
       import('./Contact/Contact');

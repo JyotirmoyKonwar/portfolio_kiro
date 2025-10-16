@@ -3,7 +3,8 @@ import type {
   Project, 
   SkillCategory, 
   ResearchEntry,
-  AboutData
+  AboutData,
+  Experience
 } from '../types';
 
 // Import JSON data
@@ -12,6 +13,7 @@ import aboutDataJson from '../data/about.json';
 import projectsData from '../data/projects.json';
 import skillsData from '../data/skills.json';
 import researchData from '../data/research.json';
+import experienceData from '../data/experience.json';
 
 /**
  * Data validation utilities
@@ -81,10 +83,24 @@ export class DataValidator {
       typeof data.currentFocus === 'string' &&
       typeof data.careerGoals === 'string' &&
       Array.isArray(data.education) &&
-      Array.isArray(data.researchInterests) &&
       data.stats &&
       typeof data.stats.yearsOfStudy === 'number' &&
       typeof data.stats.projectsCompleted === 'number'
+    );
+  }
+
+  static validateExperience(experience: any): experience is Experience {
+    return (
+      experience &&
+      typeof experience.id === 'string' &&
+      typeof experience.title === 'string' &&
+      typeof experience.company === 'string' &&
+      typeof experience.location === 'string' &&
+      typeof experience.startDate === 'string' &&
+      typeof experience.endDate === 'string' &&
+      typeof experience.description === 'string' &&
+      Array.isArray(experience.technologies) &&
+      ['internship', 'full-time', 'part-time', 'freelance', 'project'].includes(experience.type)
     );
   }
 }
@@ -249,6 +265,36 @@ export class DataLoader {
   }
 
   /**
+   * Load and validate experience data
+   */
+  static getExperience(): Experience[] {
+    try {
+      if (!Array.isArray(experienceData)) {
+        throw new Error('Experience data must be an array');
+      }
+
+      const validatedExperience = experienceData.filter(experience => {
+        const isValid = DataValidator.validateExperience(experience);
+        if (!isValid) {
+          console.warn('Invalid experience data found:', experience);
+        }
+        return isValid;
+      });
+
+      return validatedExperience as Experience[];
+    } catch (error) {
+      this.handleDataError('experience', error);
+    }
+  }
+
+  /**
+   * Get experience by type
+   */
+  static getExperienceByType(type: Experience['type']): Experience[] {
+    return this.getExperience().filter(experience => experience.type === type);
+  }
+
+  /**
    * Get project statistics
    */
   static getProjectStats() {
@@ -342,5 +388,6 @@ export const getAboutData = () => DataLoader.getAboutData();
 export const getProjects = () => DataLoader.getProjects();
 export const getSkills = () => DataLoader.getSkills();
 export const getResearch = () => DataLoader.getResearch();
+export const getExperience = () => DataLoader.getExperience();
 
 export default DataLoader;

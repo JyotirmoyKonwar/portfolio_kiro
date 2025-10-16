@@ -55,13 +55,16 @@ export interface Education {
   details?: string;
 }
 
-export interface ResearchInterest {
+export interface Experience {
   id: string;
   title: string;
+  company: string;
+  location: string;
+  startDate: string;
+  endDate: string;
   description: string;
-  category: string;
-  tags: string[];
-  icon: string;
+  technologies: string[];
+  type: 'internship' | 'full-time' | 'part-time' | 'freelance' | 'project';
 }
 
 export interface AboutStats {
@@ -78,7 +81,6 @@ export interface AboutData {
   currentFocus: string;
   careerGoals: string;
   education: Education[];
-  researchInterests: ResearchInterest[];
   stats: AboutStats;
 }
 

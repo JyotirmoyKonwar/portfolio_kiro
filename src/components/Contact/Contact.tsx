@@ -5,7 +5,7 @@ import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 import { SiGooglescholar } from 'react-icons/si';
 import { Container, Section, Button, Card } from '../UI';
 import { useData } from '../../hooks/useData';
-import { trackContactInteraction } from '../../services/analytics';
+
 import { EmailService } from '../../services/emailService';
 import type { ComponentProps, ContactFormData } from '../../types';
 
@@ -79,9 +79,6 @@ export const Contact: React.FC<ComponentProps> = ({ className = '' }) => {
     setStatus('submitting');
 
     try {
-      // Track contact interaction
-      trackContactInteraction();
-      
       // Try to send email using EmailJS
       const emailResult = await EmailService.sendEmail(formData);
       

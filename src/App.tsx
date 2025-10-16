@@ -3,19 +3,17 @@ import { useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { NavigationProvider } from './contexts/NavigationContext';
-import { AnalyticsProvider, useAnalytics } from './contexts/AnalyticsContext';
 import { Layout } from './components/Layout';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
-import { AnalyticsButton } from './components/Analytics';
 import { SEO } from './components/SEO';
 import { ErrorBoundary, SectionErrorBoundary } from './components/UI/ErrorBoundary';
 import { 
   LazyProjects, 
+  LazyExperience,
   LazyResearch, 
   LazySkills, 
-  LazyContact, 
-  LazyAnalyticsDashboard,
+  LazyContact,
   preloadCriticalComponents 
 } from './components/LazyComponents';
 import { addFocusVisiblePolyfill } from './utils/accessibility';
@@ -25,7 +23,6 @@ import './utils/accessibilityTest'; // Auto-run accessibility checks in developm
 
 // Main App Content Component
 const AppContent = () => {
-  const { isAnalyticsDashboardOpen, closeAnalyticsDashboard } = useAnalytics();
 
   useEffect(() => {
     // Initialize performance monitoring
@@ -75,6 +72,9 @@ const AppContent = () => {
           {/* Projects Section - Lazy loaded */}
           <LazyProjects />
 
+          {/* Experience Section - Lazy loaded */}
+          <LazyExperience />
+
           {/* Research Section - Lazy loaded */}
           <LazyResearch />
 
@@ -85,12 +85,7 @@ const AppContent = () => {
           <LazyContact />
         </main>
 
-        {/* Analytics Components */}
-        <AnalyticsButton />
-        <LazyAnalyticsDashboard 
-          isOpen={isAnalyticsDashboardOpen} 
-          onClose={closeAnalyticsDashboard} 
-        />
+
       </Layout>
     </>
   );
@@ -113,9 +108,7 @@ function App() {
       <HelmetProvider>
         <ThemeProvider>
           <NavigationProvider>
-            <AnalyticsProvider>
-              <AppContent />
-            </AnalyticsProvider>
+            <AppContent />
           </NavigationProvider>
         </ThemeProvider>
       </HelmetProvider>

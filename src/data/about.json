@@ -14,40 +14,7 @@
       "details": "Specializing in Artificial Intelligence and Data Science with focus on machine learning, deep learning, generative AI, and their applications."
     }
   ],
-  "researchInterests": [
-    {
-      "id": "ml",
-      "title": "Machine Learning",
-      "description": "Exploring advanced ML algorithms, ensemble methods, and their applications in various domains including healthcare and finance.",
-      "category": "Core AI",
-      "tags": ["Machine Learning", "Algorithms", "Supervised Learning", "Unsupervised Learning"],
-      "icon": "🤖"
-    },
-    {
-      "id": "dl",
-      "title": "Deep Learning",
-      "description": "Investigating neural network architectures, particularly CNNs, RNNs, Transformers and SSMs, for computer vision and natural language processing tasks.",
-      "category": "Core AI",
-      "tags": ["Deep Learning", "Neural Networks", "CNN", "RNN", "Transformers"],
-      "icon": "🧠"
-    },
-    {
-      "id": "nlp",
-      "title": "Natural Language Processing",
-      "description": "Working on language models, unsupervised clustering, and text generation with applications in conversational AI and content analysis.",
-      "category": "Applied AI",
-      "tags": ["NLP", "Language Models", "Text Analysis", "Conversational AI"],
-      "icon": "💬"
-    },
-    {
-      "id": "gen ai",
-      "title": "Generative AI",
-      "description": "Exploring the creative potential of AI through generative models. My research focuses on developing, fine-tuning models for generation and deepfake detection for text, speech and images.",
-      "category": "Impact",
-      "tags": ["Generative AI", "Text Generation", "Image Generation", "Deepfake Detection"],
-      "icon": "✨"
-    }
-  ],
+
   "stats": {
     "yearsOfStudy": 4,
     "projectsCompleted": 15

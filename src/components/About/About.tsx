@@ -8,7 +8,6 @@ import { useData } from '../../hooks/useData';
 export const About: React.FC = () => {
   const { aboutData } = useData();
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
-  const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
 
   const toggleSection = (sectionId: string) => {
     const newExpanded = new Set(expandedSections);
@@ -19,27 +18,6 @@ export const About: React.FC = () => {
     }
     setExpandedSections(newExpanded);
   };
-
-  const toggleInterest = (interest: string) => {
-    setSelectedInterests(prev => 
-      prev.includes(interest) 
-        ? prev.filter(i => i !== interest)
-        : [...prev, interest]
-    );
-  };
-
-  const filteredInterests = selectedInterests.length > 0 
-    ? aboutData?.researchInterests.filter(interest => 
-        selectedInterests.some(selected => 
-          interest.tags.includes(selected) || interest.category === selected
-        )
-      ) || []
-    : aboutData?.researchInterests || [];
-
-  const allTags = Array.from(new Set([
-    ...(aboutData?.researchInterests.flatMap(interest => interest.tags) || []),
-    ...(aboutData?.researchInterests.map(interest => interest.category) || [])
-  ]));
 
   if (!aboutData) {
     return (
@@ -161,20 +139,20 @@ export const About: React.FC = () => {
               </Card>
             </AnimatedCard>
 
-            {/* Experience Section */}
+            {/* Goals Section */}
             <AnimatedCard hoverEffect={true}>
               <Card variant="glass" padding="lg">
               <button
-                onClick={() => toggleSection('experience')}
+                onClick={() => toggleSection('goals')}
                 className="w-full flex items-center justify-between text-left group"
               >
                 <div className="flex items-center space-x-3">
                   <Target className="text-blue-500" size={24} />
                   <h3 className="text-xl font-semibold text-slate-50 group-hover:text-blue-500 transition-colors">
-                    Experience & Goals
+                    Focus & Goals
                   </h3>
                 </div>
-                {expandedSections.has('experience') ? (
+                {expandedSections.has('goals') ? (
                   <ChevronUp className="text-slate-400" size={20} />
                 ) : (
                   <ChevronDown className="text-slate-400" size={20} />
@@ -182,7 +160,7 @@ export const About: React.FC = () => {
               </button>
               
               <AnimatePresence>
-                {expandedSections.has('experience') && (
+                {expandedSections.has('goals') && (
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
@@ -250,78 +228,7 @@ export const About: React.FC = () => {
           </AnimatedSection>
         </div>
 
-        {/* Research Interests Section */}
-        <AnimatedSection animation="fadeInUp" delay={600}>
-          <h3 className="text-2xl font-bold text-center mb-8">
-            Research <span className="gradient-text">Interests</span>
-          </h3>
 
-          {/* Filter Tags */}
-          <div className="flex flex-wrap justify-center gap-2 mb-6 sm:mb-8 px-4 sm:px-0">
-            <button
-              onClick={() => setSelectedInterests([])}
-              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all touch-manipulation ${
-                selectedInterests.length === 0
-                  ? 'bg-cyan-500 text-slate-900'
-                  : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
-              }`}
-            >
-              All
-            </button>
-            {allTags.map((tag) => (
-              <button
-                key={tag}
-                onClick={() => toggleInterest(tag)}
-                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all touch-manipulation ${
-                  selectedInterests.includes(tag)
-                    ? 'bg-blue-500 text-slate-900'
-                    : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
-                }`}
-              >
-                {tag}
-              </button>
-            ))}
-          </div>
-
-          {/* Research Interest Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            <AnimatePresence>
-              {filteredInterests.map((interest, index) => (
-                <motion.div
-                  key={interest.id}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                >
-                  <Card variant="glass" padding="lg" hover>
-                    <div className="text-center">
-                      <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center">
-                        <span className="text-lg sm:text-2xl">{interest.icon}</span>
-                      </div>
-                      <h4 className="text-base sm:text-lg font-semibold text-slate-50 mb-2">
-                        {interest.title}
-                      </h4>
-                      <p className="text-slate-300 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed px-2 sm:px-0">
-                        {interest.description}
-                      </p>
-                      <div className="flex flex-wrap justify-center gap-1">
-                        {interest.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2 py-1 bg-slate-700/50 text-slate-400 rounded text-xs"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </div>
-        </AnimatedSection>
       </Container>
     </Section>
   );

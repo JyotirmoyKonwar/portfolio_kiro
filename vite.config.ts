@@ -16,8 +16,8 @@ export default defineConfig({
           'ui-vendor': ['lucide-react', 'react-icons'],
           
           // Feature chunks
-          'analytics': ['./src/components/Analytics/AnalyticsDashboard.tsx'],
           'projects': ['./src/components/Projects/Projects.tsx'],
+          'experience': ['./src/components/Experience/Experience.tsx'],
           'research': ['./src/components/Research/Research.tsx'],
           'skills': ['./src/components/Skills/Skills.tsx'],
           'contact': ['./src/components/Contact/Contact.tsx']

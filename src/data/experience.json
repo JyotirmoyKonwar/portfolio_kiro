@@ -1,0 +1,35 @@
+[
+  {
+    "id": "research-intern",
+    "title": "Research Intern",
+    "company": "VANET Lab IIT Jodhpur",
+    "location": "Jodhpur, RJ",
+    "startDate": "May 2025",
+    "endDate": "July 2025",
+    "description": "Built a MultiModal Driver Behaviour Classification that ensures robustness against real-world sensor failures and missing data.",
+    "technologies": ["Python", "PyTorch", "Transformers", "Numpy", "Pandas"],
+    "type": "internship"
+  },
+  {
+    "id": "ml-project",
+    "title": "MLOps Intern",
+    "company": "Borde Inc.",
+    "location": "Remote",
+    "startDate": "May 2023",
+    "endDate": "May 2025",
+    "description": "Performed Data Annotation, Cleaning and Segmentation. Fine-tuned YOLOv5 models and deployed them on prroduction sites.",
+    "technologies": ["Python", "TensorFlow", "OpenCV", "Linux", "scikit-learn"],
+    "type": "internship"
+  },
+  {
+    "id": "web-dev-freelance",
+    "title": "Research Intern",
+    "company": "Speech Lab IIT Guwahati",
+    "location": "Guwahati, AS",
+    "startDate": "May 2024",
+    "endDate": "July 2024",
+    "description": "Worked on Speech Recognition using Machine Leaning and Deep Learning Techniques.",
+    "technologies": ["Python", "C++", "Numpy", "Librosa", "MFC", "Matplotlib", "Pandas"],
+    "type": "internship"
+  }
+]
