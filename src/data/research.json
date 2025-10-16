@@ -1,0 +1,22 @@
+[
+  {
+    "id": "MVMOC",
+    "title": "Multi-View Multi-Objective Clustering for Extractive Document Summarization",
+    "authors": ["J. Konwar", "Dr. S. Mishra"],
+    "venue": "Target EACL 2025",
+    "year": 2025,
+    "abstract": "This research explores extractive summarization techniques for Document and Text Summarization using Multi-View Multi-Objective Optimization techniques",
+    "pdfUrl": "/documents/research-paper-1.pdf",
+    "arxivUrl": "",
+    "status": "in-progress"
+  },
+  {
+    "id": "Deepfake Survey",
+    "title": "Image Deepfake survey",
+    "authors": ["J. Konwar", "Dr. P. Saikia"],
+    "venue": "IEEE Transaction",
+    "year": 2025,
+    "abstract": "A survey on the history of Deepfake generation and detection techniques and current SOTA architectures and models",
+    "status": "in-progress"
+  }
+]

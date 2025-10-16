@@ -1,0 +1,72 @@
+[
+  {
+    "category": "Programming Languages",
+    "skills": [
+      {"name": "Python", "level": "Advanced"},
+      {"name": "C++", "level": "Intermediate"},
+      {"name": "C", "level": "Intermediate"},
+      {"name": "SQL", "level": "Beginner"},
+      {"name": "Matlab", "level": "Intermediate"},
+      {"name": "HTML", "level": "Intermediate"},
+      {"name": "CSS", "level": "Beginner"},
+      {"name": "JavaScript", "level": "Beginner"},
+      {"name": "Bash", "level": "Beginner"}
+    ]
+  },
+  {
+    "category": "AI/ML Frameworks",
+    "skills": [
+      {"name": "TensorFlow", "level": "Advanced"},
+      {"name": "PyTorch", "level": "Advanced"},
+      {"name": "scikit-learn", "level": "Advanced"},
+      {"name": "Keras", "level": "Advanced"},
+      {"name": "OpenCV", "level": "Intermediate"},
+      {"name": "Hugging Face", "level": "Advanced"},
+      {"name": "NLTK", "level": "Intermediate"},
+      {"name": "LangChain", "level": "Advanced"},
+      {"name": "LangGraph", "level": "Advanced"}
+    ]
+  },
+  {
+    "category": "Data Science Tools",
+    "skills": [
+      {"name": "Pandas", "level": "Advanced"},
+      {"name": "NumPy", "level": "Advanced"},
+      {"name": "Matplotlib", "level": "Advanced"},
+      {"name": "Seaborn", "level": "Advanced"},
+      {"name": "Jupyter", "level": "Advanced"},
+      {"name": "Librosa", "level": "Beginner"},
+      {"name": "Power BI", "level": "Intermediate"},
+      {"name": "Apache Spark", "level": "Intermediate"}
+    ]
+  },
+  {
+    "category": "Web Technologies",
+    "skills": [
+      {"name": "React", "level": "Beginner"},
+      {"name": "Node.js", "level": "Beginner"},
+      {"name": "Flask", "level": "Intermediate"},
+      {"name": "FastAPI", "level": "Intermediate"},
+      {"name": "HTML/CSS", "level": "Beginner"},
+      {"name": "Tailwind CSS", "level": "Beginner"},
+      {"name": "Streamlit", "level": "Advanced"},
+      {"name": "Gradio", "level": "Advanced"}
+    ]
+  },
+  {
+    "category": "Tools & Platforms",
+    "skills": [
+      {"name": "Git", "level": "Intermediate"},
+      {"name": "Docker", "level": "Beginner"},
+      {"name": "AWS", "level": "Beginner"},
+      {"name": "Azure", "level": "Beginner"},
+      {"name": "PostgreSQL", "level": "Intermediate"},
+      {"name": "MongoDB", "level": "Beginner"},
+      {"name": "Weights & Biases", "level": "Beginner"},
+      {"name": "Airflow", "level": "Intermediate"},
+      {"name": "MLflow", "level": "Intermediate"},
+      {"name": "Postman", "level": "Intermediate"},
+      {"name": "Raspberry Pi", "level": "Beginner"}
+    ]
+  }
+]

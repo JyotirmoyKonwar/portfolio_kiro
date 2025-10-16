@@ -1,0 +1,17 @@
+{
+  "personal": {
+    "name": "Jyotirmoy Konwar",
+    "title": "CS M. Tech Student | AI & Data Science",
+    "tagline": "Building intelligent systems that solve real-world problems",
+    "email": "jyotirmoykonwarjk@gmail.com",
+    "location": "Bengaluru, KA",
+    "bio": "Passionate Computer Science Master's student specializing in AI and Data Science. Currently exploring machine learning applications in real-world problem solving, with a focus on developing intelligent systems that make a meaningful impact.",
+    "resumeUrl": "/documents/resume.pdf"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/jyotirmoy-konwar/",
+    "github": "https://github.com/JyotirmoyKonwar",
+    "scholar": "https://scholar.google.com",
+    "twitter": "https://twitter.com/"
+  }
+}

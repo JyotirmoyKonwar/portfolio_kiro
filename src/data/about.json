@@ -1,0 +1,55 @@
+{
+  "name": "Jyotirmoy Konwar",
+  "title": "CS M. Tech Student | AI",
+  "introduction": "Passionate about leveraging artificial intelligence and data science to solve complex real-world problems and create meaningful impact.",
+  "summary": "A dedicated Computer Science Master's student with a strong foundation in AI and Data Science. Currently exploring cutting-edge machine learning techniques and their applications in various domains.",
+  "detailedBackground": "My journey in computer science began with a fascination for how technology can transform lives. During my undergraduate studies, I developed a strong foundation in programming, algorithms, and software engineering. This led me to pursue advanced studies in AI and Data Science, where I've been exploring machine learning, deep learning, and their applications in solving real-world challenges. I'm particularly interested in the intersection of AI and social good, working on projects that can make a positive impact on society.",
+  "currentFocus": "Currently focusing on advanced machine learning techniques, particularly in the areas of natural language processing and generative AI. Working on research projects that explore the application of AI in healthcare, education, and security.",
+  "careerGoals": "Aspiring to pursue a PhD in Computer Science with a focus on AI research, ultimately aiming to contribute to breakthrough technologies that can address global challenges. Interested in both academic research and industry applications of AI.",
+  "education": [
+    {
+      "degree": "Integrated Dual Degree (B. Tech + M. Tech) in CS&AI",
+      "institution": "Energy Institute Bengaluru, RGIPT",
+      "year": "2022 - 2027(expected)",
+      "details": "Specializing in Artificial Intelligence and Data Science with focus on machine learning, deep learning, generative AI, and their applications."
+    }
+  ],
+  "researchInterests": [
+    {
+      "id": "ml",
+      "title": "Machine Learning",
+      "description": "Exploring advanced ML algorithms, ensemble methods, and their applications in various domains including healthcare and finance.",
+      "category": "Core AI",
+      "tags": ["Machine Learning", "Algorithms", "Supervised Learning", "Unsupervised Learning"],
+      "icon": "🤖"
+    },
+    {
+      "id": "dl",
+      "title": "Deep Learning",
+      "description": "Investigating neural network architectures, particularly CNNs, RNNs, Transformers and SSMs, for computer vision and natural language processing tasks.",
+      "category": "Core AI",
+      "tags": ["Deep Learning", "Neural Networks", "CNN", "RNN", "Transformers"],
+      "icon": "🧠"
+    },
+    {
+      "id": "nlp",
+      "title": "Natural Language Processing",
+      "description": "Working on language models, unsupervised clustering, and text generation with applications in conversational AI and content analysis.",
+      "category": "Applied AI",
+      "tags": ["NLP", "Language Models", "Text Analysis", "Conversational AI"],
+      "icon": "💬"
+    },
+    {
+      "id": "gen ai",
+      "title": "Generative AI",
+      "description": "Exploring the creative potential of AI through generative models. My research focuses on developing, fine-tuning models for generation and deepfake detection for text, speech and images.",
+      "category": "Impact",
+      "tags": ["Generative AI", "Text Generation", "Image Generation", "Deepfake Detection"],
+      "icon": "✨"
+    }
+  ],
+  "stats": {
+    "yearsOfStudy": 4,
+    "projectsCompleted": 15
+  }
+}

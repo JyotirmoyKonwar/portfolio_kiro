@@ -1,0 +1,57 @@
+[
+  {
+    "id": "project-1",
+    "title": "Smart Product Pricing Ensemble Model ",
+    "description": "Our solution for Amazon ML Challenge 2025 that got us AIR 52",
+    "longDescription": "Developed a Multimodal end-to-end predictive pipeline for article price prediction using DeBERTa, ELECTRA, CLIPViT, attention layers and residual block.",
+    "techStack": [
+      "Python",
+      "HuggingFace",
+      "PyTorch",
+      "Pandas",
+      "Numpy",
+      "NLTK",
+      "scikit-learn"
+    ],
+    "githubUrl": "https://github.com/JyotirmoyKonwar/Amazon_ML_Challenge_2025",
+    "imageUrl": "",
+    "featured": true,
+    "category": "Data Science"
+  },
+  {
+    "id": "project-2",
+    "title": "Multi-View Multi-Objective Extractive Summarizer",
+    "description": "Explored Unsupervised Techniques for Extractive Document and Text Summarization",
+    "longDescription": "Designed a multi-objective clustering framework using NSGA-II and integrated multi-view document representations by combining TF-IDF, BERT, andFinBERT embeddings",
+    "techStack": [
+      "Python",
+      "scikit-learn",
+      "HuggingFace",
+      "NLTK"
+    ],
+    "githubUrl": "https://github.com/JyotirmoyKonwar/MvMOC_VI",
+    "imageUrl": "",
+    "featured": false,
+    "category": "NLP"
+  },
+  {
+    "id": "project-3",
+    "title": "Agent Derma Doc",
+    "description": "Developed a Multimodal Multi Agent Skin Disease Chatbot",
+    "longDescription": "Developed a Multimodal Multi Agent Skin Disease Chatbot using RAG, Fine-tuned Gemma3 270M and Fine-tuned Swin Transformer",
+    "techStack": [
+      "Python",
+      "HuggingFace",
+      "LangGraph",
+      "PyTorch",
+      "Transformers",
+      "LangChain",
+      "Unsloth"
+    ],
+    "githubUrl": "https://github.com/JyotirmoyKonwar/Skin_Disease_Classification",
+    "imageUrl": "",
+    "liveUrl": "https://github.com/JyotirmoyKonwar/Skin_Disease_Classification",
+    "featured": true,
+    "category": "Agentic AI"
+  }
+]
