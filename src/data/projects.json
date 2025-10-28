@@ -36,7 +36,7 @@
   },
   {
     "id": "project-3",
-    "title": "Agent Derma Doc",
+    "title": "Agent Derma Doc Chatbot",
     "description": "Developed a Multimodal Multi Agent Skin Disease Chatbot",
     "longDescription": "Developed a Multimodal Multi Agent Skin Disease Chatbot using RAG, Fine-tuned Gemma3 270M and Fine-tuned Swin Transformer",
     "techStack": [
@@ -48,9 +48,9 @@
       "LangChain",
       "Unsloth"
     ],
-    "githubUrl": "https://github.com/JyotirmoyKonwar/Skin_Disease_Classification",
+    "githubUrl": "hhttps://github.com/JyotirmoyKonwar/Agent_Derma_Doc_Chat",
     "imageUrl": "",
-    "liveUrl": "https://github.com/JyotirmoyKonwar/Skin_Disease_Classification",
+    "liveUrl": "https://huggingface.co/spaces/Jyo-K/Agent_Derma_Doc",
     "featured": true,
     "category": "Agentic AI"
   }
